@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'gilroy';
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+nav{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+    padding: 0 30px;
+}
+
+nav h4{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+nav i{
+    background-color: rgb(0, 0, 0);
+    color: rgb(248, 241, 241);
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+#center{
+    width: 100%;
+    padding: 20px 40px;
+}
+
+#center h1{
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 60px;
+}
+
+#inner-center{
+    height: 150px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#inner-center p{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+#right{
+    width: 20%;
+}
+
+.ele{
+    /* margin: 5px; */
+    padding: 10px 0;
+    border-top: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ele i{
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 0;
+}
+
+.ele a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.ele:hover i{
+    opacity: 1;
+}
+
+.ele:hover a{
+    text-decoration: underline;
+}
+
+#bottom{
+    height: 28%;
+    background-image: url(/image/fashion-img.jpg);
+    background-size: cover;    
+    background-position: 0 53%;
+}
