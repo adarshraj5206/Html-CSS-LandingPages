@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Games - Nintendo Switch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css" rel="stylesheet"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+            background-image: url(https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-size: cover;
+            background-position: center;
+            overflow-x: hidden;
+        }
+         
+        .link1, .link2 {
+            position: relative;
+        }
+        
+        .link1::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 4px;
+            margin-bottom: -7px;
+            padding: 4px;
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255);
+            opacity: 0;
+        }
+        
+        .link1:hover::before {
+            opacity: 1;
+            transition: 0.5s;
+        }
+        
+        .link2::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 5px;
+            margin-bottom: -6px;
+            padding: 4px;
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255);
+            opacity: 0;
+        }
+        
+        .link2:hover::before {
+            opacity: 1;
+            transition: 0.5s;
+        }
+        
+        .dot::after {
+            content: "";
+            position: absolute;
+            right: -3px;
+            padding: 4px;
+            border-radius: 50%;
+            background-color: yellow;
+        }
+        
+        .navr .profile::after {
+            content: "A";
+            font-size: 12px;
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            padding: 2px 2px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 2px;
+            border-bottom-left-radius: 2px;
+            background-color: rgb(255, 255, 255);
+        }
+        
+        /* Responsive card layout */
+        @media (max-width: 767px) {
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+                max-height: 60vh;
+                overflow-y: auto;
+                padding-bottom: 30px;
+            }
+            
+            .card {
+                transform: none !important;
+                margin: 10px 0 !important;
+                width: 90% !important;
+                height: auto !important;
+                aspect-ratio: 5/6;
+            }
+            
+            .card:hover {
+                transform: translateY(-10px) !important;
+                z-index: 99 !important;
+            }
+        }
+        
+        /* Desktop card layout */
+        @media (min-width: 768px) {
+            .card:nth-child(1):hover ~ .card,
+            .card:nth-child(2):hover ~ .card,
+            .card:nth-child(3):hover ~ .card,
+            .card:nth-child(4):hover ~ .card,
+            .card:nth-child(5):hover ~ .card {
+                filter: blur(10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main w-full h-screen bg-black bg-opacity-60 overflow-y-auto md:overflow-y-hidden">
+        <!-- nav -->
+        <nav class="flex flex-col md:flex-row justify-between items-center p-3 md:py-4 md:px-5">
+            <!-- Mobile menu button -->
+            <div class="block md:hidden w-full flex justify-between items-center mb-3">
+                <button class="text-white text-xl">
+                    <i class="ri-menu-line"></i>
+                </button>
+                <div class="w-[60px] h-[50px]">
+                    <img src="/images/logo.png" alt="" class="w-full h-full object-contain">
+                </div>
+                <div class="cart flex items-center">
+                    <i class="ri-handbag-fill text-white text-[20px]"></i>
+                    <div class="dot w-[17px] h-[17px] bg-white rounded-full relative"></div>
+                </div>
+            </div>
+            
+            <div class="navl flex flex-wrap justify-center md:justify-start items-center gap-4 w-full md:w-auto">
+                <div class="link1">
+                    <i class="ri-gamepad-fill text-white"></i>
+                    <a href="#" class="text-white">Games</a>
+                </div>
+                <div class="link2">
+                    <i class="ri-shield-star-fill text-white"></i>
+                    <a href="#" class="text-white">Store</a>
+                </div>
+                <div class="searchbar flex items-center gap-2 border-2 border-white rounded-full py-1 px-2 w-full md:w-auto mt-2 md:mt-0">
+                    <i class="ri-search-2-line text-white"></i>
+                    <input type="text" placeholder="Search Games.." class="text-white bg-transparent border-none outline-none w-full">
+                    <i class="ri-equalizer-2-fill text-white"></i>
+                </div>
+            </div>
+            
+            <div class="navc hidden md:block w-[80px] h-[70px]">
+                <img src="/images/logo.png" alt="" class="w-full h-full translate-x-[-100px] translate-y-[5px]">
+            </div>
+            
+            <div class="navr flex items-center justify-center md:justify-end gap-4 w-full md:w-auto mt-3 md:mt-0">
+                <div class="cart hidden md:flex items-center gap-[8px]">
+                    <i class="ri-handbag-fill text-white text-[20px]"></i>
+                    <div class="dot w-[17px] h-[17px] bg-white rounded-full relative"></div>
+                </div>
+                <div class="coin w-[100px] p-[5px] border-[2px] border-white rounded-full relative">
+                    <i class="ri-money-rupee-circle-fill text-[20px] text-yellow-500 px-[3px]"></i>
+                    <span class="text-[17px] text-white py-[3px]">99<span class="coin-count text-[17px] text-gray-400">99..</span></span>
+                    <i class="ri-add-fill text-[15px] text-white absolute top-[7px] right-[-12px] bg-blue-800 rounded-full px-[4px]"></i>
+                </div>
+                <div class="profile relative w-[40px] h-[40px] rounded-md border-[2px] border-white overflow-hidden">
+                    <img src="/images/adarshgamingprofile.png" alt="" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </nav>
+        
+        <!-- content -->
+        <div class="content pt-[10px] w-full text-white px-4">
+            <h5 class="text-center text-[15px] font-semibold mb-[8px]">
+                <span class="text-yellow-500"><i class="ri-ancient-gate-line"></i> 5 Months</span>- Free Access
+            </h5>
+            <h2 class="text-center text-4xl md:text-5xl lg:text-[70px] font-[600] mb-[5px] leading-tight md:leading-[75px]">Fun Games</h2>
+            <h2 class="text-center text-4xl md:text-5xl lg:text-[70px] font-[600] mt-[5px] leading-tight md:leading-[75px]">Nintendo Switch</h2>
+            <p class="text-center text-[15px] font-[200] mt-2">
+                Be sure to try our selection of games, We have carefully chosen them. 
+                <br class="hidden md:block">There are games for all tastes.
+            </p>
+        </div>
+        
+        <!-- card container -->
+        <div class="card-container mt-[20px] flex justify-center items-center">
+            <!-- card 1 -->
+            <div class="card mt-[10px] w-[250px] h-[300px] rounded-md overflow-hidden border-[1.5px] border-white relative translate-x-[0] md:translate-x-[120px] translate-y-[0] md:translate-y-[90px] rotate-[0] md:rotate-[-15deg] hover:translate-x-[0] md:hover:translate-x-[100px] hover:translate-y-[-10px] md:hover:translate-y-[-100px] hover:rotate-[0deg] hover:z-[99] transition-all duration-500">
+                <img src="images/card1- water forniter.png" alt="" class="w-full h-full object-cover">
+                <div class="card-caption absolute top-0 left-[1px] px-[5px] pt-[5px] flex gap-[70px] w-full">
+                    <div class="left">
+                        <h5 class="text-[17px] font-[600] text-white">Water Fornight</h5>
+                        <p class="text-[12px] text-white">dark water <br>adventure game</p>
+                    </div>
+                    <div class="right">
+                        <span class="text-[15px] text-white bg-black px-[5px] rounded-full py-[2px] bg-opacity-80">
+                            <i class="ri-bnb-fill text-[15px] bg-black rounded-full"></i> 4.2
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- card 2 -->
+            <div class="card mt-[10px] w-[250px] h-[300px] rounded-md overflow-hidden border-[1.5px] border-white relative translate-x-[0] md:translate-x-[60px] translate-y-[0] md:translate-y-[30px] rotate-[0] md:rotate-[-10deg] hover:translate-x-[0] md:hover:translate-x-[40px] hover:translate-y-[-10px] md:hover:translate-y-[-100px] hover:rotate-[0deg] hover:z-[99] transition-all duration-500">
+                <img src="/images/card2 - Idaten jump game.png" alt="" class="w-full h-full object-cover">
+                <div class="card-caption absolute top-0 left-[10px] px-[5px] pt-[5px] flex gap-[70px] w-full">
+                    <div class="left">
+                        <h5 class="text-[18px] font-[600] text-white">Idaten Jump</h5>
+                        <p class="text-[12px] text-white">flaming <br>cycling <br>game</p>
+                    </div>
+                    <div class="right">
+                        <span class="text-[15px] text-white bg-black px-[5px] rounded-full py-[2px] bg-opacity-80">
+                            <i class="ri-bnb-fill text-[15px] bg-black rounded-full"></i> 4.1
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- card 3 -->
+            <div class="card mt-[10px] w-[250px] h-[300px] rounded-md overflow-hidden border-[1.5px] border-white relative translate-y-[0] md:translate-y-[-10px] rotate-[0deg] z-[9] hover:translate-y-[-10px] md:hover:translate-y-[-100px] transition-all duration-500">
+                <img src="/images/card3 -nextgen Samurai game.png" alt="" class="w-full h-full object-cover">
+                <div class="card-caption absolute top-0 left-[5px] px-[5px] pt-[5px] flex gap-[40px] w-full">
+                    <div class="left">
+                        <h5 class="text-[18px] font-[600] text-white">NextGen Samurai</h5>
+                        <p class="text-[12px] text-white">Futuristic samurai <br>action game</p>
+                    </div>
+                    <div class="right">
+                        <span class="text-[15px] text-white bg-black px-[5px] rounded-full py-[2px] bg-opacity-80">
+                            <i class="ri-bnb-fill text-[15px] bg-black rounded-full"></i> 4.5
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- card 4 -->
+            <div class="card mt-[10px] w-[250px] h-[300px] rounded-md overflow-hidden border-[1.5px] border-white relative translate-x-[0] md:translate-x-[-60px] translate-y-[0] md:translate-y-[30px] rotate-[0] md:rotate-[10deg] z-[8] hover:translate-x-[0] md:hover:translate-x-[-40px] hover:translate-y-[-10px] md:hover:translate-y-[-100px] hover:rotate-[0deg] hover:z-[99] transition-all duration-500">
+                <img src="/images/card4 - Futuristic Mario game.png" alt="" class="w-full h-full object-cover">
+                <div class="card-caption absolute top-0 left-[10px] px-[5px] pt-[5px] flex gap-[40px] w-full">
+                    <div class="left">
+                        <h5 class="text-[18px] font-[600] text-white">Futuristic Mario</h5>
+                        <p class="text-[12px] text-white">mario in space <br>world game</p>
+                    </div>
+                    <div class="right">
+                        <span class="text-[15px] text-white bg-black px-[5px] rounded-full py-[2px] bg-opacity-80">
+                            <i class="ri-bnb-fill text-[15px] bg-black rounded-full"></i> 4.5
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- card 5 -->
+            <div class="card mt-[10px] w-[250px] h-[300px] rounded-md overflow-hidden border-[1.5px] border-white relative translate-x-[0] md:translate-x-[-120px] translate-y-[0] md:translate-y-[90px] rotate-[0] md:rotate-[15deg] z-[7] hover:translate-x-[0] md:hover:translate-x-[-100px] hover:translate-y-[-10px] md:hover:translate-y-[-100px] hover:rotate-[0deg] hover:z-[99] transition-all duration-500">
+                <img src="images/card5- Ben 10 unknown alien war in dark water.png" alt="" class="w-full h-full object-cover">
+                <div class="card-caption absolute top-0 left-[10px] px-[5px] pt-[5px] flex gap-[40px] w-full">
+                    <div class="left">
+                        <h5 class="text-[18px] font-[600] text-white">Unknown Ben 10</h5>
+                        <p class="text-[12px] text-white">Ben 10 Unknown <br>Aline War</p>
+                    </div>
+                    <div class="right">
+                        <span class="text-[15px] text-white bg-black px-[6px] rounded-full py-[2px] bg-opacity-80">
+                            <i class="ri-bnb-fill text-[15px] bg-black rounded-full"></i> 4.2
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

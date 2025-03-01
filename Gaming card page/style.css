@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    background-image: url(https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+    overflow-y: hidden;
+}
+
+
+.link1,.link2{
+    position: relative;
+}
+
+.link1::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 4px;
+    margin-bottom: -7px;
+    padding: 4px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    opacity: 0;
+}
+
+.link1:hover::before{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.link2::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    margin-bottom: -6px;
+    padding: 4px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    opacity: 0;
+}
+
+.link2:hover::before{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.dot::after{
+    content: "";
+    position: absolute;
+    right: -3px;
+    padding: 4px;
+    border-radius: 50%;
+    background-color:yellow;
+}
+
+.navr .profile::after{
+    content: "A";
+    font-size: 12px;
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    padding: 2px 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    background-color: rgb(255, 255, 255);
+}
+
+.card:nth-child(1):hover ~ .card{
+    filter: blur(10px);
+}
+
+.card:nth-child(2):hover ~ .card{
+    filter: blur(10px);
+}
+
+.card:nth-child(3):hover ~ .card{
+    filter: blur(10px);
+}
+
+.card:nth-child(4):hover ~ .card{
+    filter: blur(10px);
+}
+
+.card:nth-child(5):hover ~ .card{
+    filter: blur(10px);
+}
+
